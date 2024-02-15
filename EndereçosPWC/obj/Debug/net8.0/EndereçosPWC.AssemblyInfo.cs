@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EndereçosPWC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2608bde14ec566332371c2c299a80d67b8fe11d9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b3db154f3f55729ff3ba2591b4b9f138f43b06e8")]
 [assembly: System.Reflection.AssemblyProductAttribute("EndereçosPWC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EndereçosPWC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

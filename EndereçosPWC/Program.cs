@@ -8,13 +8,15 @@ class Program
     {
 
         Console.WriteLine("Bem vindo ao sistema!");
-        Console.WriteLine("selecione uma opção:\n");
-        Console.WriteLine("1 - Salvar um endereço         2 - Verificar endereços salvos");
-        Console.WriteLine("3 - Encerrar");
-        string option = Console.ReadLine();
+        Console.ReadLine();
         bool menu = true;
         while (menu)
         {
+            Console.WriteLine("selecione uma opção:\n");
+            Console.WriteLine("1 - Salvar um endereço         2 - Verificar endereços salvos");
+            Console.WriteLine("3 - Encerrar");
+            string option = Console.ReadLine();
+
             switch(option)
             {
                 case "1":
@@ -23,12 +25,15 @@ class Program
                     string[] substrings = Enderecos.SepararStrings(adress);
                     string number = Enderecos.BuscarNumero(substrings);
                     string street = Enderecos.RemoverNumero(number, substrings);
+                    Enderecos.ArquivarEndereco(street, number);
 
                     Console.WriteLine($"O logradouro na rua {street} e número {number} foi salvo");
                     Console.ReadLine();
                     break;
 
                 case "2":
+                    Enderecos.VisualizarArquivo();
+                    Console.ReadLine();
                     break;
 
                 case "3":

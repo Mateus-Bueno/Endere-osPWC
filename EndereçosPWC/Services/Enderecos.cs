@@ -2,6 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+
+using System.IO;
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace EndereçosPWC.Services
@@ -96,6 +99,35 @@ namespace EndereçosPWC.Services
             string street = string.Join(" ", noNumberSubstrings);
             
             return street;
+        }
+
+        public static void ArquivarEndereco(string street, string number)
+        {
+            bool added;
+            using (StreamReader sr = new StreamReader("ArquivoEnderecos.txt"))
+            {
+                added = sr.ReadToEnd().Contains($"\"{street}\", \"{number}\"");
+            }
+
+            using (StreamWriter sw = File.AppendText("ArquivoEnderecos.txt"))
+            {
+                if (added)
+                {
+
+                }
+                else
+                {
+                    sw.WriteLine($"\"{street}\", \"{number}\"");
+                }
+            }
+        }
+
+        public static void VisualizarArquivo()
+        {
+            using (StreamReader sr = new StreamReader("ArquivoEnderecos.txt"))
+            {
+                Console.WriteLine(sr.ReadToEnd());
+            }
         }
     }
 }

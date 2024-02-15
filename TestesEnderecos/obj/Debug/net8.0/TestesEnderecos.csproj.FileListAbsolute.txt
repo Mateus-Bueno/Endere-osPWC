@@ -103,3 +103,4 @@ C:\Users\mateu\OneDrive\Área de Trabalho\DesafioDeCodigoPWC\TestesEnderecos\obj
 C:\Users\mateu\OneDrive\Área de Trabalho\DesafioDeCodigoPWC\TestesEnderecos\obj\Debug\net8.0\TestesEnderecos.pdb
 C:\Users\mateu\OneDrive\Área de Trabalho\DesafioDeCodigoPWC\TestesEnderecos\obj\Debug\net8.0\TestesEnderecos.genruntimeconfig.cache
 C:\Users\mateu\OneDrive\Área de Trabalho\DesafioDeCodigoPWC\TestesEnderecos\obj\Debug\net8.0\ref\TestesEnderecos.dll
+C:\Users\mateu\OneDrive\Área de Trabalho\DesafioDeCodigoPWC\TestesEnderecos\obj\Debug\net8.0\TestesEnderecos.sourcelink.json
