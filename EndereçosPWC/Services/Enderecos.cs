@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
+using EndereçosPWC.Exceptions;
 
 namespace EndereçosPWC.Services
 {
@@ -113,7 +114,7 @@ namespace EndereçosPWC.Services
             {
                 if (added)
                 {
-
+                    throw new EnderecoJaFoiSalvoException();
                 }
                 else
                 {
