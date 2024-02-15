@@ -16,6 +16,10 @@ namespace EndereçosPWC.Services
         {
             adress = adress.Replace(",", "");
             string[] substrings = adress.Split(" ");
+            if (substrings.Length < 2)
+            {
+                throw new UsoInvalidoException();
+            }
             return substrings;
         }
 
@@ -110,16 +114,16 @@ namespace EndereçosPWC.Services
                 added = sr.ReadToEnd().Contains($"\"{street}\", \"{number}\"");
             }
 
-            using (StreamWriter sw = File.AppendText("ArquivoEnderecos.txt"))
+            if (added) 
             {
-                if (added)
-                {
-                    throw new EnderecoJaFoiSalvoException();
-                }
-                else
-                {
-                    sw.WriteLine($"\"{street}\", \"{number}\"");
-                }
+                throw new EnderecoJaFoiSalvoException();
+            }
+            else
+            {
+                List<string> enderecosSalvos = File.ReadAllLines("ArquivoEnderecos.txt").ToList();
+                enderecosSalvos.Add($"\"{street}\", \"{number}\"");
+                enderecosSalvos.Sort();
+                File.WriteAllLines("ArquivoEnderecos.txt",enderecosSalvos);
             }
         }
 

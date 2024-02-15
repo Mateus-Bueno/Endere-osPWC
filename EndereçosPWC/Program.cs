@@ -2,14 +2,12 @@
 using EndereçosPWC.Exceptions;
 using EndereçosPWC.Services;
 
-
 class Program
 {
     public static void Main (string[] args)
     {
-
         Console.WriteLine("Bem vindo ao sistema!");
-        Console.ReadLine();
+        Console.ReadKey();
         bool menu = true;
         while (menu)
         {
@@ -52,11 +50,17 @@ class Program
                 }
             }
 
-            catch(EnderecoJaFoiSalvoException)
+            catch (UsoInvalidoException)
+            {
+                Console.WriteLine("O endereço não pode ser formado por menos de duas palavras!");
+                Console.ReadKey();
+            }
+
+            catch (EnderecoJaFoiSalvoException)
             {
                 Console.WriteLine("Este endereço já está em nossos arquivos");
                 Console.WriteLine("No menu, digite 2 caso queira verificar os endereços salvos.");
-                Console.ReadLine();
+                Console.ReadKey();
             }
         }
             
