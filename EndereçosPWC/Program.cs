@@ -6,6 +6,7 @@ class Program
 {
     public static void Main (string[] args)
     {
+        // Inicializa o menu e o repete até o usuário encerrar
         bool menu = true;
         while (menu)
         {

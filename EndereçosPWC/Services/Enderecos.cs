@@ -14,6 +14,7 @@ namespace EndereçosPWC.Services
     {
         private static readonly string arquivo = "ArquivoEnderecos.txt";
 
+        // Remove as vírgulas e separa o endereço passado por subgrupos de palavras
         public static string[] SepararStrings(string adress)
         {
             adress = adress.Replace(",", "");
@@ -25,9 +26,12 @@ namespace EndereçosPWC.Services
             return substrings;
         }
 
+        // Busca pelo número do endereço entre as sustrings passadas
         public static string BuscarNumero(string[] substrings)
         {
             string number = "";
+
+            // Define os padrões que serão usados para analisar cada string com Regex
             string[] numberPatterns = {@"\b[0-9]+\b", @"\b[0-9]+[a-zA-Z]{1}\b"};
             string[] abreviattionPatterns = {@"\bn\b", @"\bno\b", @"\bN\b", @"\bNo\b", @"\bNO\b"};
             bool numberValidate = false;
@@ -35,13 +39,14 @@ namespace EndereçosPWC.Services
             int count = 0;
             
 
+            // Faz uma verificação alternada entre o final e início do endereço passado até encontrar o número
             do
             {
-
                 foreach (string nPattern in numberPatterns)
                 {
                     if (Regex.IsMatch(substrings[ssCount], nPattern))
                     {
+                        // Busca por N ou No antes do número
                         foreach (string pattern in abreviattionPatterns)
                         {
                             if (Regex.IsMatch(substrings[ssCount - 1], pattern))
@@ -51,8 +56,10 @@ namespace EndereçosPWC.Services
                             }
                         }
                         
+                        // Adiciona o número encontrado à string "number"
                         number += substrings[ssCount];
 
+                        // Busca por letras ou blocos após o número
                         if (count != 0 && Regex.IsMatch(substrings[ssCount + 1], @"\b[a-zA-Z]{1}\b"))
                         {
                             number += " " + substrings[ssCount + 1];
@@ -91,6 +98,7 @@ namespace EndereçosPWC.Services
             return number;
         }
 
+        // Remove o número encontrado do endereço, sobrando apenas a rua/avenida/..
         public static string RemoverNumero(string number, string[] substrings)
         {
             List<string> noNumberSubstrings = new List<string>();
@@ -112,6 +120,8 @@ namespace EndereçosPWC.Services
         {
             string text = $"\"{street}\", \"{number}\"";
             bool added;
+
+            // Verifica se o mesmo endereço já foi passado anteriormente
             using (StreamReader sr = new StreamReader(arquivo))
             {
                 added = sr.ReadToEnd().ToLower().Contains(text.ToLower());
@@ -123,6 +133,7 @@ namespace EndereçosPWC.Services
             }
             else
             {
+                // Adiciona ao arquivo e ordena alfabeticamente
                 List<string> enderecosSalvos = File.ReadAllLines(arquivo).ToList();
                 enderecosSalvos.Add(text);
                 enderecosSalvos.Sort();
