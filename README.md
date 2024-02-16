@@ -10,5 +10,6 @@ e conta com a seguinte proposta:
 
 Utilizei as Expressões Regulares da linguagem C# para atender esses requisítos da melhor forma possível, identificando o número no endereço passado e separando tanto o número quanto a rua em strings diferentes
 
-Visando incrementar o desafio, inclui um menu de usuário com opções que variam entre "Salvar um endereço", "Verificar endereços salvos" e "Encerrar"; além um arquivo de texto que visa simular onde essas informações seriam armazenadas no sistema, e no qual os endereços são ordenados alfabeticamente; e Exceptions para tratamento de erros junto a blocos try/catch.
+Visando incrementar o desafio eu elaborei um diagrama de classes e este README como documentação, inclui um menu de usuário com opções que variam entre "Salvar um endereço", "Verificar endereços salvos" e "Encerrar"; além um arquivo de texto que visa simular onde essas informações seriam armazenadas no sistema, e no qual os endereços são ordenados alfabeticamente; e Exceptions para tratamento de erros junto a blocos try/catch.
 
+![Diagrama de Classes do Projeto](DiagramaDeClasses_EnderecosPwC.png)

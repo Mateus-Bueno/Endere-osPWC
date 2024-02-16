@@ -6,13 +6,13 @@ class Program
 {
     public static void Main (string[] args)
     {
-        Console.WriteLine("Bem vindo ao sistema!");
-        Console.ReadKey();
         bool menu = true;
         while (menu)
         {
             try
             {
+                Console.Clear();
+                Console.WriteLine("Bem vindo ao sistema!\n");
                 Console.WriteLine("selecione uma opção:");
                 Console.WriteLine("1 - Salvar um endereço         2 - Verificar endereços salvos");
                 Console.WriteLine("3 - Encerrar");

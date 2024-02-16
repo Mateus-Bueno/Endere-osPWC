@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mateu\\OneDrive\\Área de Trabalho\\DesafioDeCodigoPWC\\EndereçosPWC\\EndereçosPWC.csproj": {}
+    "C:\\Users\\mateu\\OneDrive\\Área de Trabalho\\DesafioCodigoPWC\\EndereçosPWC\\EndereçosPWC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mateu\\OneDrive\\Área de Trabalho\\DesafioDeCodigoPWC\\EndereçosPWC\\EndereçosPWC.csproj": {
+    "C:\\Users\\mateu\\OneDrive\\Área de Trabalho\\DesafioCodigoPWC\\EndereçosPWC\\EndereçosPWC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mateu\\OneDrive\\Área de Trabalho\\DesafioDeCodigoPWC\\EndereçosPWC\\EndereçosPWC.csproj",
+        "projectUniqueName": "C:\\Users\\mateu\\OneDrive\\Área de Trabalho\\DesafioCodigoPWC\\EndereçosPWC\\EndereçosPWC.csproj",
         "projectName": "EndereçosPWC",
-        "projectPath": "C:\\Users\\mateu\\OneDrive\\Área de Trabalho\\DesafioDeCodigoPWC\\EndereçosPWC\\EndereçosPWC.csproj",
+        "projectPath": "C:\\Users\\mateu\\OneDrive\\Área de Trabalho\\DesafioCodigoPWC\\EndereçosPWC\\EndereçosPWC.csproj",
         "packagesPath": "C:\\Users\\mateu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mateu\\OneDrive\\Área de Trabalho\\DesafioDeCodigoPWC\\EndereçosPWC\\obj\\",
+        "outputPath": "C:\\Users\\mateu\\OneDrive\\Área de Trabalho\\DesafioCodigoPWC\\EndereçosPWC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mateu\\AppData\\Roaming\\NuGet\\NuGet.Config"

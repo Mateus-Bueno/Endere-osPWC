@@ -10,8 +10,10 @@ using EndereçosPWC.Exceptions;
 
 namespace EndereçosPWC.Services
 {
-    public class Enderecos
+    public static class Enderecos
     {
+        private static readonly string arquivo = "ArquivoEnderecos.txt";
+
         public static string[] SepararStrings(string adress)
         {
             adress = adress.Replace(",", "");
@@ -108,10 +110,11 @@ namespace EndereçosPWC.Services
 
         public static void ArquivarEndereco(string street, string number)
         {
+            string text = $"\"{street}\", \"{number}\"";
             bool added;
-            using (StreamReader sr = new StreamReader("ArquivoEnderecos.txt"))
+            using (StreamReader sr = new StreamReader(arquivo))
             {
-                added = sr.ReadToEnd().Contains($"\"{street}\", \"{number}\"");
+                added = sr.ReadToEnd().ToLower().Contains(text.ToLower());
             }
 
             if (added) 
@@ -120,18 +123,28 @@ namespace EndereçosPWC.Services
             }
             else
             {
-                List<string> enderecosSalvos = File.ReadAllLines("ArquivoEnderecos.txt").ToList();
-                enderecosSalvos.Add($"\"{street}\", \"{number}\"");
+                List<string> enderecosSalvos = File.ReadAllLines(arquivo).ToList();
+                enderecosSalvos.Add(text);
                 enderecosSalvos.Sort();
-                File.WriteAllLines("ArquivoEnderecos.txt",enderecosSalvos);
+                File.WriteAllLines(arquivo, enderecosSalvos);
             }
         }
 
         public static void VisualizarArquivo()
         {
-            using (StreamReader sr = new StreamReader("ArquivoEnderecos.txt"))
+            FileInfo infoArquivo = new FileInfo(arquivo);
+
+            if (infoArquivo.Length == 0)
             {
-                Console.WriteLine(sr.ReadToEnd());
+                Console.WriteLine("Nao existem dados salvos!");
+                return;
+            }
+            else
+            {
+                using (StreamReader sr = new StreamReader(arquivo))
+                {
+                    Console.WriteLine(sr.ReadToEnd());
+                }
             }
         }
     }
