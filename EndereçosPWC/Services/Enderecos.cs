@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 using System.IO;
+using System.Globalization;
 using System.Text;
 using System.Text.RegularExpressions;
 using EndereçosPWC.Exceptions;
@@ -17,13 +18,36 @@ namespace EndereçosPWC.Services
         // Remove as vírgulas e separa o endereço passado por subgrupos de palavras
         public static string[] SepararStrings(string adress)
         {
+            TextInfo textInfo = new CultureInfo("pt-BR", false).TextInfo;
             adress = adress.Replace(",", "");
+            adress = textInfo.ToTitleCase(adress);
+
             string[] substrings = adress.Split(" ");
             if (substrings.Length < 2)
             {
                 throw new UsoInvalidoException();
             }
-            return substrings;
+
+            bool haveNumber = false;
+            foreach (string ss in substrings)
+            {
+                haveNumber = Regex.IsMatch(ss, @"[0-9]+");
+
+                if (haveNumber)
+                {
+                    break;
+                }
+            }
+            
+            if (haveNumber)
+            {
+                return substrings;
+            }
+            else
+            {
+                throw new NenhumNumeroEncontradoException();
+            }
+            
         }
 
         // Busca pelo número do endereço entre as sustrings passadas

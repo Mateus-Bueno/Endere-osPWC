@@ -29,7 +29,7 @@ class Program
                         string street = Enderecos.RemoverNumero(number, substrings);
                         Enderecos.ArquivarEndereco(street, number);
 
-                        Console.WriteLine($"O endereço {street}, número {number} foi salvo");
+                        Console.WriteLine($"O endereço \"{street}\", número \"{number}\" foi salvo");
                         Console.ReadKey();
                         break;
 
@@ -54,6 +54,12 @@ class Program
             catch (UsoInvalidoException)
             {
                 Console.WriteLine("O endereço não pode ser formado por menos de duas palavras!");
+                Console.ReadKey();
+            }
+
+            catch (NenhumNumeroEncontradoException)
+            {
+                Console.WriteLine("O endereço deve conter pelo menos um número escrito em algarismos.");
                 Console.ReadKey();
             }
 
