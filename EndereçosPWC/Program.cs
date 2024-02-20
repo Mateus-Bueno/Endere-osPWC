@@ -4,7 +4,7 @@ using EndereçosPWC.Services;
 
 class Program
 {
-    public static void Main (string[] args)
+    public static void Main ()
     {
         // Inicializa o menu e o repete até o usuário encerrar
         bool menu = true;

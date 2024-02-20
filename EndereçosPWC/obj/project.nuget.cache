@@ -1,13 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+ko4eLK2K+9WuAEoaOltVlcnDmLYqFr6xFkVykcqxqLai92Jij05H21fF4IRntEXtP/5/8+6lLR/BMMpbpOk+w==",
+  "dgSpecHash": "k4V34VW9GbZPwlVL2Z0SQXir0iNTj8M2Ld3fqi7L3HtQ0Ox4YO7XH0nHrr0r/7NWnOXHT6mpMzpUm+i9tTNoXg==",
   "success": true,
   "projectFilePath": "C:\\Users\\mateu\\OneDrive\\Área de Trabalho\\DesafioCodigoPWC\\EndereçosPWC\\EndereçosPWC.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\mateu\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.0\\microsoft.net.illink.tasks.8.0.0.nupkg.sha512",
-    "C:\\Users\\mateu\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\8.0.0\\microsoft.netcore.app.runtime.win-x64.8.0.0.nupkg.sha512",
-    "C:\\Users\\mateu\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\8.0.0\\microsoft.windowsdesktop.app.runtime.win-x64.8.0.0.nupkg.sha512",
-    "C:\\Users\\mateu\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\8.0.0\\microsoft.aspnetcore.app.runtime.win-x64.8.0.0.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }
